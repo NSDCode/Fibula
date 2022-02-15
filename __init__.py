@@ -2,9 +2,13 @@ import requests
 from rich import pretty
 from rich.console import Console
 from rich.table import Table
-console = Console()
-pretty.install()
+from rich import inspect as insp
+import inspect
 
+console = Console()
+
+
+pretty.install()
 class Method:
     def __init__(self, methodName, invoke):
         self.Name = methodName
@@ -27,10 +31,11 @@ def print_content(Method, result):
     table.add_column("Value", style="bold white")
 
     cprint(f"Intercepted content from {Method.Name} ({Method.invoke})")
-
+    cprint(f"Calling Method: {inspect.stack()[2][3]}")
+    cprint(f"Calling code: {inspect.stack()[2][4]}")
     table.add_row(f"[orange][GENERAL][/orange]", "Url", result.url)
     table.add_row(f"[orange][GENERAL][/orange]", "Code", str(result.status_code))
-    table.add_row(f"[green][REICEIVED][/green]","Content:", str(result.content[0:100]) if len(str(result.content)) > 100 else str(result.content))
+    table.add_row(f"[green][RECEIVED][/green]","Content:", str(result.content[0:100]) if len(str(result.content)) > 100 else str(result.content))
 
     for n in result.headers:
         table.add_row("[green][RECEIVED][/green]", f"[gray]{n}[/gray]", f"[gray]{result.headers[n]}[/gray]")
