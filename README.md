@@ -50,6 +50,9 @@ To install you'll need to install the following modules:
 Rich ```pip install rich```
 
 
+## Credits
+
+Rich https://github.com/Textualize/rich
 
 
 
