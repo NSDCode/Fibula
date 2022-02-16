@@ -5,7 +5,7 @@ Python Hooking library for 'requests' module
 ## Itnroduction
 
 Fibula is a library that hooks the requests module of python and inercept the content.
-The first idea came from: [https://github.com/Svenskithesource]: Svenskithesource
+The idea of hooking a method came from: https://github.com/Svenskithesource
 
 ## Example
 ```py
@@ -42,10 +42,14 @@ requests = __import__("Fibula")
 - session
 - get_compatibility
 
+### Other features
+Calling method (will get the method name and code which called the function)
 
 ## Installation
 To install you'll need to install the following modules:
 Rich ```pip install rich```
+
+
 
 
 
