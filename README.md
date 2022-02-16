@@ -43,7 +43,7 @@ requests = __import__("Fibula")
 - get_compatibility
 
 ### Other features
-Calling method (will get the method name and code which called the function)
+Calling method (will get the method's name and code which called the function)
 
 ## Installation
 To install you'll need to install the following modules:
