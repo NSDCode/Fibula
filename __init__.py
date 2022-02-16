@@ -71,15 +71,14 @@ def session(*args, **kwargs):
 
 def check_compatibility(*args, **kwargs):
     return requests.check_compatibility(*args, **kwargs)
-    requests.check_compatibility(*args, **kwargs)
 
 def define_hooks():
     cprint("Initializing hooks...")
     requests.get = get
     requests.post = post
     requests.delete = delete
-    requests.post = post
     requests.head = head
+    requests.patch = patch
 
 define_hooks()
-cprint("Fibula has been initialized.")
+cprint(f"Fibula has been initialized.")
